@@ -2,6 +2,10 @@
 
 Repo demonstrating a problem with webpack@5 and v-lazy-image used in Vue2 app
 
+Checkout Github Action in this repository to see the actual error.
+
+### Problem
+
 When trying to use `v-lazy-image` with Vue2 as follows:
 
 ```vue
@@ -59,3 +63,25 @@ Module not found: Error: Package path ./v2 is not exported from package /Users/k
 
 webpack 5.72.1 compiled with 1 error in 379 ms
 ```
+
+### Workaround
+
+A workaround that I've found is to add `v2/` to the `exports` field of
+`v-lazy-image`'s `package.json`:
+
+```json
+  ...
+  "exports": {
+    ".": {
+      "import": "./dist/v-lazy-image.mjs",
+      "require": "./dist/v-lazy-image.js"
+    },
+    "./v2": {
+      "import": "./v2/v-lazy-image.mjs",
+      "require": "./v2/v-lazy-image.js"
+    }
+  },
+  ...
+```
+
+The fix is available at [`fix.diff`](./fix.diff).

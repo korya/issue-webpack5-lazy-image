@@ -1,0 +1,13 @@
+--- old/node_modules/v-lazy-image/package.json	2022-05-14 15:29:41.853865169 -0400
+--- new/node_modules/v-lazy-image/package.json	2022-05-14 15:29:41.853865169 -0400
+@@ -34,6 +34,10 @@
+     ".": {
+       "import": "./dist/v-lazy-image.mjs",
+       "require": "./dist/v-lazy-image.js"
++    },
++    "./v2": {
++      "import": "./v2/v-lazy-image.mjs",
++      "require": "./v2/v-lazy-image.js"
+     }
+   },
+   "jest": {
