@@ -2,7 +2,9 @@
 
 Repo demonstrating a problem with webpack@5 and v-lazy-image used in Vue2 app
 
-Checkout Github Action in this repository to see the actual error.
+Checkout the Actions tab in this repository to see the actual error.
+
+A PR was opened in https://github.com/alexjoverm/v-lazy-image/pull/108
 
 ### Problem
 
